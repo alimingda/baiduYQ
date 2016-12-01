@@ -1,0 +1,816 @@
+body,html,a,ul,ol,li,input,h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding:0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #FFF;
+    font-size: 12px;
+    font-family: "Microsoft Yahei";
+}
+img{
+    border:0;
+}
+body,html{
+    width: 100%;
+    height:100%;
+    overflow: hidden;
+}
+header{
+    width:100%;
+    height:60px;
+    background:#168bd8;
+    position: fixed;
+    top:0;
+    z-index:999;
+}
+header .nav{
+    width: 100%;
+    height:100%;
+    margin:0 auto;
+    position: relative;
+}
+.nav .login{
+    display: block;
+    width: 120px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 40px;
+    background-image: url(../img/header.png);
+    background-position: -2px 0px;
+    background-repeat: no-repeat;
+}
+.nav .index,.nav .last{
+    display: none;
+}
+.nav .flag{
+    position: absolute;
+    right:40px;
+    top:10px;
+    width:30px;
+    height:20px;
+    border-radius: 3px;
+}
+.flag .bt{
+    width: 30px;
+    height: 5px;
+    border-radius: 5px;
+    background: #FFF;
+    position: absolute;
+    margin:auto 0;
+    top:0;bottom:0;
+    transition: width 0.2s ease;
+}
+.flag .bt:before{
+    content: "";
+    width: 30px;
+    height: 5px;
+    border-radius: 5px;
+    background: #FFF;
+    position: absolute;
+    top: -8px;
+    transition: transform 0.6s ease;
+    transform-origin:14%;
+
+}
+.flag .bt:after{
+    content: "";
+    width: 30px;
+    height: 5px;
+    border-radius: 5px;
+    background: #FFF;
+    position: absolute;
+    top: 8px;
+    transition: transform 0.6s ease;
+    transform-origin:14%;
+
+}
+.flag .btd{
+    width:0;
+}
+.flag .btd:before{
+   transform:rotate(45deg);
+}
+.flag .btd:after{
+    transform:rotate(-45deg);
+}
+.scene{
+    margin-top:-10px;
+    perspective: 600px;
+}
+.navcopy {
+    transform-style:preserve-3d;
+}
+.navcopy a{
+    padding: 10px 0;
+    font-size: 16px;
+    text-align: center;
+    background: rgba(0,0,0,.8);
+    transform:rotateX(-45deg);
+    /*transition:all 1s ease ;*/
+    opacity:0;
+}
+
+
+#fullpage{
+    width:100%;
+    height:100%;
+    transition: margin-top 1s ease;
+}
+#fullpage section{
+    width:100%;
+    height: 100%;
+    background-size:cover;
+    cursor: pointer;
+    position: relative;
+}
+#fullpage section:nth-child(1){
+    background-image: url(../img/1.jpg);
+}
+#fullpage section:nth-child(2){
+    background-image: url(../img/2.jpg);
+}
+#fullpage section:nth-child(3){
+    background-image: url(../img/3.jpg);
+}
+#fullpage section:nth-child(4){
+    background-image: url(../img/4.jpg);
+}
+
+
+/***********************第一屏幕********************/
+#fullpage section:nth-child(1) .sone{
+    width: 100%;
+    height:100%;
+}
+.cleft{
+    height:100%;
+    position: relative;
+}
+.cleft .flight{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height:100%;
+}
+.cleft .flight img:nth-child(1){
+    top:100px;
+    left: 0;
+    position: absolute;
+}
+.cleft .flight img:nth-child(2){
+    top: 100px;
+    left: 300px;
+    position: absolute;
+    transition: all 0.5s ease;
+    animation: flight 1s linear infinite alternate;
+}
+@keyframes flight {
+    100% {
+        transform: translateY(-10px);
+    }
+}
+#fullpage section:nth-child(1) .cright{
+    height:100%;
+    position: relative;
+}
+.cright .biaodan{
+    position: absolute;
+    left:0;
+    top: 0;
+    bottom:0;
+    right:0;
+    margin:auto;
+    background:#4ebffc;
+    width:340px;
+    height: 300px;
+    border-radius: 5px;
+}
+.cright .biaodan form{
+    padding: 26px 20px 0;
+}
+.cright .biaodan form .info{
+    width: 300px;
+    background: #FFF;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.cright .biaodan form .info span{
+    display: block;
+    width: 14px;
+    height: 14px;
+    margin: 10px 10px 0 10px;
+    background-image: url(../img/tubiao.png);
+    background-position: -124px -12px;
+    float: left;
+}.cright .biaodan form .info input{
+     width: 85%;
+     padding: 10px 5px;
+     float: left;
+     border:none;
+     font-size: 16px;
+     font-family: "微软雅黑";
+
+ }
+.cright .biaodan form .pass{
+    width: 300px;
+    background: #FFF;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.cright .biaodan form .pass span{
+    display: block;
+    width: 14px;
+    height: 14px;
+    margin: 10px 10px 0 10px;
+    background-image: url(../img/tubiao.png);
+    background-position: -140px -12px;
+    float: left;
+}
+.cright .biaodan form .pass input{
+    width: 85%;
+    padding: 10px 5px;
+    float: left;
+    border:none;
+    font-size: 16px;
+    font-family: "微软雅黑";
+
+}
+.cright .biaodan form .yanzheng{
+    width: 300px;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+.cright .biaodan form .yanzheng input{
+    width: 40%;
+    padding: 10px;
+    float: left;
+    border:none;
+    font-size: 16px;
+    font-family: "微软雅黑";
+
+}
+.cright .biaodan form .yanzheng .yzm{
+    margin-left: 20px;
+    width: 99px;
+    height:40px;
+    float: left;
+    background-image: url("../img/yanzheng.png");
+    background-size: cover;
+}
+.cright .biaodan form .yanzheng a{
+    float: left;
+    display: block;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.cright .biaodan form .denglu{
+    width: 300px;
+    overflow: hidden;
+}
+.cright .biaodan form .denglu button{
+    background: #ffd850;
+    color: #5c4c12;
+    width: 100%;
+    padding: 5px;
+    float: left;
+    border:none;
+    font-size: 20px;
+    font-family: "微软雅黑";
+    text-align: center;
+
+}
+
+.yun1{
+    background:url("../img/cloud_1.png");
+    height: 1000px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    transition: all 0.5s;
+    animation: cloud 30s linear infinite ;
+}
+.yun2{
+    background:url("../img/cloud_2.png");
+    height: 400px;
+    left: 0;
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    transition: all 0.5s;
+    animation: cloud 60s linear infinite ;
+}
+@keyframes cloud{
+    0%{
+        left:500px;
+    }
+    100%{
+        left: -500px;
+    }
+}
+
+#fullpage section:nth-child(1) .forward-head{
+    background: url("../img/2.jpg") repeat scroll 0 0;
+    height: 126px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+.forward-head .zuan1{
+    position: absolute;
+    background:url("../img/hill1.png") repeat scroll 0 0;
+    height: 175px;
+    left: 0px;
+    top: -50px;
+    width: 265px;
+}
+.forward-head .zuan2{
+    background: url("../img/hill2.png") repeat scroll 0 0;
+    height: 78px;
+    right: 400px;
+    position: absolute;
+    top: -15px;
+    width: 63px;
+}
+.forward-head .zuan3{
+    background: url("../img/hill3.png") repeat scroll 0 0;
+    height: 175px;
+    right: 0px;
+    top: -47px;
+    width: 260px;
+    position: absolute;
+}
+.forward-head .ship {
+    position: absolute;
+    background:url("../img/ship.png") repeat scroll 0 0;
+    height: 228px;
+    left: 320px;
+    top: -191px;
+    width: 242px;
+    transition: all 1s;
+}
+
+/*********************第二屏幕*********************/
+#fullpage section:nth-child(2) .sone{
+    width: 100%;
+    height:100%;
+}
+.sone .cleft_2,.sone .cright_2{
+    height: 100%;
+    position: relative;
+}
+.twoleft{
+    color: #fff;
+    font-family: "Microsoft Yahei";
+    position: absolute;
+    left:60px;
+    top: 0;
+    bottom:0;
+    right:0;
+    margin:auto;
+    width: 500px;
+    height: 180px;
+}
+.twoleft h3{
+    display: block;
+    float: left;
+    height: 126px;
+    text-indent: -9999em;
+    width: 66px;
+    margin-top: 5px;
+    animation: rotate 1.2s infinite 0s;
+    background:url("../img/lingxian.png") no-repeat scroll 0 0
+}
+.twoleft .tltext{
+    margin-left: 86px;
+}
+.twoleft .tltext h4{
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 48px;
+    margin-bottom: 6px;
+}
+.twoleft .tltext p {
+    font-size: 19px;
+    letter-spacing: 1px;
+    line-height: 32px;
+    opacity: 0.8;
+}
+@keyframes rotate{
+    100%{
+        transform: rotateY(360deg);
+    }
+}
+.tworight{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.tworight img{
+    height: 427px;
+    position: absolute;
+    right:0px;
+    top: 120px;
+    width: 444px;
+}
+#fullpage section:nth-child(2) .twobottom{
+    width: 100%;
+    position: absolute;
+    height: 90px;
+    left: 0;
+    bottom: 0;
+}
+.twobottom .square{
+    display: block;
+    position: absolute;
+    bottom: 0;
+}
+.twobottom .square:nth-child(1){
+    background: #35b568 repeat 0 0;
+    height: 44px;
+    left: 140px;
+    width: 44px;
+}
+.twobottom .square:nth-child(2) {
+    height: 88px;
+    width: 88px;
+    background: #4ac179 repeat  0 0;
+    left: 260px;
+}
+.twobottom .square:nth-child(3) {
+    background: #8ae75a repeat 0 0;
+    height: 44px;
+    left: 348px;
+    width: 44px;
+}
+.twobottom .square:nth-child(4) {
+    background: #8ae75a repeat  0 0;
+    height: 44px;
+    right: 400px;
+    width: 44px;
+}
+.twobottom .square:nth-child(5) {
+    background: #4ac179 repeat  0 0;
+    height: 44px;
+    right: 320px;
+    width: 44px;
+}
+
+/*****************************第三屏幕*********************/
+#fullpage section:nth-child(3) .sone{
+    width: 100%;
+    height:100%;
+}
+.sone .cleft_3,.sone .cright_3{
+    height: 100%;
+    position: relative;
+}
+.threelg{
+    width:352px;
+    height:352px;
+    position: absolute;
+    bottom:0;
+    top:0;
+    left: 0;
+    right: 30%;
+    margin: auto;
+}
+.threelg .rect{
+    position: absolute;
+    display: block;
+}
+.threelg .rect:nth-child(1){
+    background: #33bb9a repeat 0 0;
+    left: 70px;
+    top: 0px;
+    height: 88px;
+    width: 88px;
+}
+.threelg .rect:nth-child(2){
+    background: #29a2b8 repeat 0 0;
+    left: -18px;
+    top: 90px;
+    height: 88px;
+    width: 88px;
+}
+.threelg .rect:nth-child(3){
+    background: #60cf6e repeat 0 0;
+    left: 158px;
+    top: 90px;
+    height: 88px;
+    width: 88px;
+}
+.threelg .rect:nth-child(4){
+    background: url("../img/square.jpg") repeat  0 0;
+    height: 176px;
+    left: 70px;
+    top: 177px;
+    width: 176px;
+
+}
+.threelg .rect:nth-child(5){
+    background: #33bb9a repeat 0 0;
+    left: 245px;
+    top: 175px;
+    height: 88px;
+    width: 88px;
+ }
+.threeleft{
+    color: #fff;
+    font-family: "Microsoft Yahei";
+    position: absolute;
+    left:60px;
+    top: 0;
+    bottom:0;
+    right:0;
+    margin:auto;
+    width: 500px;
+    height: 180px;
+}
+.threeleft h3{
+    display: block;
+    float: left;
+    height: 126px;
+    text-indent: -9999em;
+    margin-top: 5px;
+    width: 66px;
+    animation: rotate 1.2s infinite 0s;
+    background:url("../img/quanmian.png") no-repeat scroll 0 0
+}
+.threeleft .tltext{
+    margin-left: 86px;
+}
+.threeleft .tltext h4{
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 48px;
+    margin-bottom: 6px;
+}
+.threeleft .tltext p {
+    font-size: 19px;
+    letter-spacing: 1px;
+    line-height: 32px;
+    opacity: 0.8;
+}
+@keyframes rotate{
+    100%{
+        transform: rotateY(360deg);
+    }
+}
+#fullpage section:nth-child(3) .threeright{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.threeright img{
+    height: 300px;
+    position: absolute;
+    right: 0px;
+    top: 120px;
+    width: 444px;
+}
+#fullpage section:nth-child(3) .threebottom{
+    background:url("../img/bg-3-head.png") repeat scroll 0 0;
+    height: 138px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+/***************************第四屏幕***********************/
+#fullpage section:nth-child(4) .sone{
+    width: 100%;
+    height:100%;
+}
+.sone .cleft_4,.sone .cright_4{
+    height: 100%;
+    position: relative;
+}
+.fourlg{
+    width:352px;
+    height:280px;
+    position: absolute;
+    bottom:0;
+    top:0;
+    left: 0;
+    right: 30%;
+    margin: auto;
+}
+
+.fourlg .square{
+    position: absolute;
+    top: 0;
+    left: 20px;
+    background: rgba(0, 0, 0, 0) url("../img/bubble.png") repeat scroll 0 0;
+    height: 245px;
+    width: 275px;
+}
+.fourleft{
+    color: #fff;
+    font-family: "Microsoft Yahei";
+    position: absolute;
+    left:60px;
+    top: 0;
+    bottom:0;
+    right:0;
+    margin:auto;
+    width: 500px;
+    height: 180px;
+}
+.fourleft h3{
+    display: block;
+    float: left;
+    height: 126px;
+    text-indent: -9999em;
+    margin-top: 5px;
+    width: 66px;
+    animation: rotate 1.2s infinite 0s;
+    background:url("../img/zhuanye.png") no-repeat scroll 0 0
+}
+.fourleft .tltext{
+    margin-left: 86px;
+}
+.fourleft .tltext h4{
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 48px;
+    margin-bottom: 6px;
+}
+.fourleft .tltext p {
+    font-size: 19px;
+    letter-spacing: 1px;
+    line-height: 32px;
+    opacity: 0.8;
+}
+@keyframes rotate{
+    100%{
+        transform: rotateY(360deg);
+    }
+}
+.fourright{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.fourright img{
+    width: 603px;
+    height: 361px;
+    position: absolute;
+    right: 100px;
+    top: 120px;
+}
+.dbtn{
+    display: block;
+    width:30px;
+    height:26px;
+    background-image: url("../img/arrow.png");
+    position: absolute;
+    left: 0;right:0;bottom: 40px;
+    margin: 0 auto;
+    animation:arrow 1s linear infinite ;
+}
+@keyframes arrow {
+    50%{
+        bottom: 50px;
+        opacity: 0.7;
+    }
+    100%{
+        bottom: 40px;
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    /**********大屏nav**********/
+    .navcopy .index,.navcopy .last,.nav .flag{
+        display: none;
+    }
+    header .nav{
+        width: 1000px;
+        height:100%;
+        margin:0 auto;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav .login{
+        margin-left: 0;
+    }
+    .nav .index,.nav .last{
+        display: block;
+    }
+    .nav .index{
+        font-size:15px;
+        align-self:flex-end;
+        font-size: 15px;
+        font-weight:bold;
+    }
+    .nav a{
+        margin-bottom: 10px;
+    }
+    .nav .last{
+        font-size:12px;
+        align-self:flex-end;
+    }
+    .nav a:nth-child(2){
+        margin-left: 50px;
+    }
+    .nav a:nth-child(5){
+        margin-left: 150px;
+    }
+    .nav a:nth-child(8){
+        color: #FFDA28;
+    }
+    .nav a:hover {
+        color: #67CBFF;
+    }
+    /**********大屏屏幕1**********/
+    #fullpage section:nth-child(1) .sone{
+        width: 1000px;
+        height:100%;
+        margin: 0 auto;
+    }
+    .cright .biaodan{
+        position: absolute;
+        bottom: 0;right:0;
+        margin: 0;
+        left:180px;
+        top: 150px;
+        background:#4ebffc;
+        width:340px;
+        height: 300px;
+        border-radius: 5px;
+    }
+    #fullpage section:nth-child(2) .sone{
+        width: 1000px;
+        height:100%;
+        margin: 0 auto;
+    }
+    .cleft_2 .twoleft {
+        color: #fff;
+        font-family: "Microsoft Yahei";
+        position: absolute;
+        top: 0;
+        left: -40px;
+        width: 500px;
+    }
+    #fullpage section:nth-child(3) .sone{
+        width: 1000px;
+        height:100%;
+        margin: 0 auto;
+    }
+    .cleft_3 .threelg{
+        width:352px;
+        height:352px;
+        position: absolute;
+        top:60px;
+        left: 0;
+    }
+    .cleft_3 .threeleft {
+        color: #fff;
+        font-family: "Microsoft Yahei";
+        position: absolute;
+        top: 0px;;
+        left: 40px;
+        width: 500px;
+    }
+    .cleft_4 .fourlg{
+        width:352px;
+        height:352px;
+        position: absolute;
+        top:100px;
+        left: 0px;
+    }
+    .cleft_4 .fourleft {
+        color: #fff;
+        font-family: "Microsoft Yahei";
+        position: absolute;
+        top: 0px;;
+        left: 100px;
+        width: 500px;
+    }
+}
+
+/************自定义*************/
+.bdtitle{
+    transform:translateX(-50px);
+    opacity:0;
+}
+.bdcon{
+    transform:translateX(50px);
+    opacity:0;
+}
+.flight{
+    opacity:1;
+}
+.biaodan{
+    opacity:1;
+}
